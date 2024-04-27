@@ -68,6 +68,9 @@
 }
 
 .operators-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border: 1px solid;
     width: 70px;
 }
@@ -80,4 +83,13 @@
 .number-keys {
     border: 1px solid red;
     height: 242px;
+}
+
+.divide, .subtract, .addition, .equal, .multiply {
+    background-color: brown;
+    height: 59px;
+    cursor: pointer;
+    font-size: 1.6em;
+    color: antiquewhite;
+    font-weight: 900;
 }

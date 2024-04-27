@@ -10,7 +10,9 @@ let operatorsContainer = createElements('div');
 let otherOperatorsCont = createElements("div");
 let numberKeysCon = createElements("div");
 
-let operators = "";
+let operatorsKeys = "";
+
+let operators = ['/', '*', '-', '+', '='];
 let btnReset = createElements("Button", "Clear Screen");
 let row = "";
 let square = "";
@@ -77,6 +79,56 @@ numberKeysCon.classList.add('number-keys');
 
 attachElements(numbersContainer, [otherOperatorsCont, numberKeysCon])
 
-for (let i = 1; i <= 3; i++) {
+operators.map((operator) => {
+    operatorsKeys = createElements('button', `${operator}`);
+
+    let opKeys = "";
+
+    if (operatorsKeys.textContent === "/") {
+        operatorsKeys.classList.add('divide');
+
+        opKeys = document.querySelector('.divide');
+
+        /*opKeys.onclick = () => {
+            console.log(opKeys.textContent);
+        } */
+    }else if (operatorsKeys.textContent === "*") {
+        operatorsKeys.classList.add('multiply');
         
-}
+         /* opKeys = document.querySelector('.multiply');
+
+        opKeys.onclick = () => {
+             console.log(opKeys.textContent);
+        }*/
+    }else if (operatorsKeys.textContent === "-") {
+        operatorsKeys.classList.add('subtract');
+
+         /* opKeys = document.querySelector('.subtract');
+
+        opKeys.onclick = () => {
+            console.log(opKeys.textContent);
+        } */
+    }else if (operatorsKeys.textContent === "+") {
+        operatorsKeys.classList.add('addition');
+
+         /* opKeys = document.querySelector('.addition');
+
+        opKeys.onclick = () => {
+            console.log(opKeys.textContent);
+        } */
+    }else if (operatorsKeys.textContent === "=") {
+        operatorsKeys.classList.add('equal');
+
+        /* opKeys = document.querySelector('.equal');
+
+        opKeys.onclick = () => {
+            console.log(opKeys.textContent);
+        } */
+    }
+
+    attachElements(operatorsContainer, [operatorsKeys])
+
+    
+});
+
+
