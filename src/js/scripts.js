@@ -5,7 +5,12 @@ let screen = createElements("div");
 let operation = createElements("div", "1 + 8");
 let results = createElements("div", 9);
 let numbersContainer = createElements("div");
-let operators = createElements("Button", "Set Grid Size");
+let keysContainer = createElements('div');
+let operatorsContainer = createElements('div');
+let otherOperatorsCont = createElements("div");
+let numberKeysCon = createElements("div");
+
+let operators = "";
 let btnReset = createElements("Button", "Clear Screen");
 let row = "";
 let square = "";
@@ -38,9 +43,7 @@ function setAttributes(attributes, element) {
 }
 
 function attachElements(parent, children = []) {
-    console.log(children)
-    children.map((child) => parent.append(child))
-    ;
+    children.map((child) => parent.append(child));
 }
 
 
@@ -56,4 +59,24 @@ results.classList.add('result');
 operation.classList.add('operation');
 
 attachElements(calcContainer, [screen]);
-attachElements(screen, [operation, results])
+attachElements(screen, [operation, results]);
+
+//attach keys container
+keysContainer.classList.add('keys-container');
+
+attachElements(calcContainer, [keysContainer])
+
+//Attach keys
+numbersContainer.classList.add('numbers-container');
+operatorsContainer.classList.add('operators-container');
+
+attachElements(keysContainer, [numbersContainer, operatorsContainer])
+
+otherOperatorsCont.classList.add('other-operators');
+numberKeysCon.classList.add('number-keys');
+
+attachElements(numbersContainer, [otherOperatorsCont, numberKeysCon])
+
+for (let i = 1; i <= 3; i++) {
+        
+}
