@@ -12,9 +12,10 @@ let numberKeysCon = createElements("div");
 let btnReset = createElements("Button", "Clear Screen");
 
 let operatorsKeys = "";
+let numberKeys = "";
 let operators = ['/', '*', '-', '+', '='];
 let otherOperators = ['AC', '%', 'MOD'];
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+let numbers = [7, 8, 9,4, 5, 6, 1, 2, 3,  0, "."];
 let row = "";
 let square = "";
 
@@ -29,7 +30,7 @@ function createElements(element, text = "") {
 }
 
 
-function setAttributes(attributes, element) {
+function setAttributes(attributes, elements = []) {
     let properties = Object.keys(attributes);
     let values = Object.values(attributes);
 
@@ -42,7 +43,9 @@ function setAttributes(attributes, element) {
     
     }
     
-    element.setAttribute("style", attribs)   
+    elements.map((element) => {
+        element.setAttribute("style", attribs)
+    })   
 }
 
 function attachElements(parent, children = []) {
@@ -114,3 +117,27 @@ otherOperators.map((otherOperator) => {
 
     attachElements(otherOperatorsCont, [otherOperatorKeys])
 });
+
+
+
+numbers.map((number) => {
+    numberKeys = createElements('button', `${number}`);
+
+    numberKeys.classList.add('number-' + `${number}`);
+
+    attachElements(numberKeysCon, [numberKeys])
+});
+
+let numberSel = document.querySelectorAll(".number-7, .number-4, .number-1, .number-8, .number-5, .number-2");
+
+numberSel = Array.from(numberSel);
+
+
+console.log(numberSel)
+
+setAttributes({
+    'margin-right': "3px",
+    
+}, numberSel);
+
+setAttributes({'width': "133px", 'margin-right': "3px"}, [document.querySelector(".number-0")])

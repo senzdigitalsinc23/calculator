@@ -14,8 +14,8 @@
 }
 
 .calc-container {
-    width: 350px;
-    height: 420px;
+    width: 285px;
+    height: 433px;
     border: 5px solid brown;
     border-radius: 1.5em;
     background-color: orange;
@@ -25,10 +25,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 347px;
+    width: 280px;
     height: 85px;
     background-color: gray;
-    border: 2px solid orange;
+    border: 2px solid black;
+    margin-bottom: 3px;
     overflow: hidden;
     color: white;
     border-radius: 1em;
@@ -51,62 +52,73 @@
 .keys-container {
     display: flex;
     margin-left: 5px;
-    width: 340px;
+    justify-content: center;
+    width: 274px;
     background-color: aliceblue;
-    height: 325px;
+    height: 338px;
+    border-radius: 10px;
     gap: 3px;
     border-radius: 3px;
     
 }
 
 .numbers-container {
-    width: 250px;
-    border: 1px solid;
+    width: 203px;
+    height: 340px;
     display: flex;
     flex-direction: column;
-    row-gap: 3px;
+    gap: 3px;
 }
 
 .operators-container {
     display: flex;
     flex-direction: column;
     gap: 3px;
-    border: 1px solid;
-    width: 80px;
+    width: 65px;
+    height: 350px;
 }
 
 .other-operators {
     display: flex;
     gap: 3px;
-    border: 1px solid red;
-    height: 70px;
+    height: 65px;
 }
 
-.number-keys {
-    border: 1px solid red;
-    height: 242px;
-}
 
 .divide, .subtract, .addition, .equal, .multiply {
     background-color: brown;
-    height: 80px;
+    height: 65px;
+    width: 65px;
     cursor: pointer;
     font-size: 1.6em;
     color: antiquewhite;
     font-weight: 900;
+    text-align: center;
+    border-radius: 6px;
 }
 
 
 .mod, .percentage, .ac{
-    background-color: antiquewhite;
-    width: 90px;
-    height: 70px;
+    background-color: bisque;
+    width: 65px;
+    height: 65px;
     cursor: pointer;
     font-size: 1.6em;
     color: brown;
     font-weight: 900;
+    text-align: center;
+    border-radius: 6px;
 }
 
-button[class ^="button-"] {
-
+button[class ^="number-"] {
+    background-color: antiquewhite;
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    font-size: 1.6em;
+    color: brown;
+    font-weight: 900;
+    margin-bottom: 3px;
+    text-align: center;
+    border-radius: 6px;
 }
