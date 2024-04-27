@@ -1,0 +1,48 @@
+:root {
+    background-color: antiquewhite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 62.5%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    font-size: 1.4em;
+}
+
+.calc-container {
+    width: 350px;
+    height: 400px;
+    border: 5px solid brown;
+    border-radius: 1.5em;
+}
+
+.screen{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 347px;
+    height: 85px;
+    background-color: gray;
+    border: 2px solid orange;
+    overflow: hidden;
+    color: white;
+    border-radius: 1em;
+}
+
+.result{
+    display: flex;
+    justify-content: end;
+    font-size: 4em;
+    padding: 5px 5px;
+    font-weight: 900;
+}
+
+.operation {
+    font-size: 1.2em;
+    padding: 3px 5px 0;
+    font-weight: 900;
+}
