@@ -15,7 +15,7 @@
 
 .calc-container {
     width: 350px;
-    height: 400px;
+    height: 420px;
     border: 5px solid brown;
     border-radius: 1.5em;
     background-color: orange;
@@ -53,14 +53,14 @@
     margin-left: 5px;
     width: 340px;
     background-color: aliceblue;
-    height: 305px;
+    height: 325px;
     gap: 3px;
     border-radius: 3px;
     
 }
 
 .numbers-container {
-    width: 270px;
+    width: 250px;
     border: 1px solid;
     display: flex;
     flex-direction: column;
@@ -70,14 +70,16 @@
 .operators-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 3px;
     border: 1px solid;
-    width: 70px;
+    width: 80px;
 }
 
 .other-operators {
+    display: flex;
+    gap: 3px;
     border: 1px solid red;
-    height: 54px;
+    height: 70px;
 }
 
 .number-keys {
@@ -87,9 +89,24 @@
 
 .divide, .subtract, .addition, .equal, .multiply {
     background-color: brown;
-    height: 59px;
+    height: 80px;
     cursor: pointer;
     font-size: 1.6em;
     color: antiquewhite;
     font-weight: 900;
+}
+
+
+.mod, .percentage, .ac{
+    background-color: antiquewhite;
+    width: 90px;
+    height: 70px;
+    cursor: pointer;
+    font-size: 1.6em;
+    color: brown;
+    font-weight: 900;
+}
+
+button[class ^="button-"] {
+
 }

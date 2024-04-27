@@ -9,11 +9,12 @@ let keysContainer = createElements('div');
 let operatorsContainer = createElements('div');
 let otherOperatorsCont = createElements("div");
 let numberKeysCon = createElements("div");
+let btnReset = createElements("Button", "Clear Screen");
 
 let operatorsKeys = "";
-
 let operators = ['/', '*', '-', '+', '='];
-let btnReset = createElements("Button", "Clear Screen");
+let otherOperators = ['AC', '%', 'MOD'];
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 let row = "";
 let square = "";
 
@@ -86,49 +87,30 @@ operators.map((operator) => {
 
     if (operatorsKeys.textContent === "/") {
         operatorsKeys.classList.add('divide');
-
-        opKeys = document.querySelector('.divide');
-
-        /*opKeys.onclick = () => {
-            console.log(opKeys.textContent);
-        } */
     }else if (operatorsKeys.textContent === "*") {
         operatorsKeys.classList.add('multiply');
-        
-         /* opKeys = document.querySelector('.multiply');
-
-        opKeys.onclick = () => {
-             console.log(opKeys.textContent);
-        }*/
     }else if (operatorsKeys.textContent === "-") {
         operatorsKeys.classList.add('subtract');
-
-         /* opKeys = document.querySelector('.subtract');
-
-        opKeys.onclick = () => {
-            console.log(opKeys.textContent);
-        } */
     }else if (operatorsKeys.textContent === "+") {
         operatorsKeys.classList.add('addition');
-
-         /* opKeys = document.querySelector('.addition');
-
-        opKeys.onclick = () => {
-            console.log(opKeys.textContent);
-        } */
     }else if (operatorsKeys.textContent === "=") {
         operatorsKeys.classList.add('equal');
-
-        /* opKeys = document.querySelector('.equal');
-
-        opKeys.onclick = () => {
-            console.log(opKeys.textContent);
-        } */
     }
 
-    attachElements(operatorsContainer, [operatorsKeys])
-
-    
+    attachElements(operatorsContainer, [operatorsKeys])    
 });
 
 
+otherOperators.map((otherOperator) => {
+    otherOperatorKeys = createElements('button', `${otherOperator}`);
+
+    if (otherOperatorKeys.textContent === "AC") {
+        otherOperatorKeys.classList.add('ac');
+    }else if (otherOperatorKeys.textContent === "%") {
+        otherOperatorKeys.classList.add('percentage');
+    }else if (otherOperatorKeys.textContent === "MOD") {
+        otherOperatorKeys.classList.add('mod');
+    }
+
+    attachElements(otherOperatorsCont, [otherOperatorKeys])
+});
