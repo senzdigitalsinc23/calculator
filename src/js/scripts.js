@@ -2,19 +2,18 @@ let mainContainer = document.querySelector(".container");
 
 let calcContainer = createElements("div");
 let screen = createElements("div");
-let operation = createElements("div", "1 + 8");
-let results = createElements("div", 9);
+let operation = createElements("div");
+let results = createElements("div", 0);
 let numbersContainer = createElements("div");
 let keysContainer = createElements('div');
 let operatorsContainer = createElements('div');
 let otherOperatorsCont = createElements("div");
 let numberKeysCon = createElements("div");
-let btnReset = createElements("Button", "Clear Screen");
 
 let operatorsKeys = "";
 let numberKeys = "";
 let operators = ['/', '*', '-', '+', '='];
-let otherOperators = ['AC', '%', 'MOD'];
+let otherOperators = ['AC', '%', 'BIN'];
 let numbers = [7, 8, 9,4, 5, 6, 1, 2, 3,  0, "."];
 let row = "";
 let square = "";
@@ -111,8 +110,8 @@ otherOperators.map((otherOperator) => {
         otherOperatorKeys.classList.add('ac');
     }else if (otherOperatorKeys.textContent === "%") {
         otherOperatorKeys.classList.add('percentage');
-    }else if (otherOperatorKeys.textContent === "MOD") {
-        otherOperatorKeys.classList.add('mod');
+    }else if (otherOperatorKeys.textContent === "BIN") {
+        otherOperatorKeys.classList.add('bin');
     }
 
     attachElements(otherOperatorsCont, [otherOperatorKeys])
@@ -123,7 +122,12 @@ otherOperators.map((otherOperator) => {
 numbers.map((number) => {
     numberKeys = createElements('button', `${number}`);
 
-    numberKeys.classList.add('number-' + `${number}`);
+
+    if (number === ".") {
+        numberKeys.classList.add('dot');
+    } else {
+        numberKeys.classList.add('number-' + `${number}`);
+    }
 
     attachElements(numberKeysCon, [numberKeys])
 });
@@ -131,9 +135,6 @@ numbers.map((number) => {
 let numberSel = document.querySelectorAll(".number-7, .number-4, .number-1, .number-8, .number-5, .number-2");
 
 numberSel = Array.from(numberSel);
-
-
-console.log(numberSel)
 
 setAttributes({
     'margin-right': "3px",
